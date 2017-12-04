@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>获取被点击的元素</title>
 </head>
-
 <style type="text/css">
 body {margin: 0px;}
 #container {width: 700px;height: 300px;padding:5px;background-color: #edfdef;}
@@ -12,17 +11,15 @@ body {margin: 0px;}
 <script src="../lib/jquery/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">  
        function getClickEle(ele){
-       		console.log($(ele).val());
-       		$(document).click(function(e){console.log(e.target.value)});
+       		console.log($(ele).val());     //方法一：通过jquery对象，获取被点击的元素
+       		console.log(ele.tagName);      //方法二：通过传入js 元素对象，获取
+       		//$(document).click(function(e){console.log(e.target.value)});
        }
-
        function getClildVal(ele){
-       		console.log($(ele).find("#girl_1")[0].tagName);
-       		console.log($($(ele).find("#girl_1")[0]).attr("id"));
-       }
-      
+       		console.log($(ele).find("#girl_1")[0].tagName);  //方法五：获取被点击的元素的子元素转jquery对象，家伙去子元素
+       		console.log($($(ele).find("#girl_1")[0]).attr("id"));  //方法六：获取被点击的元素的子元素
+       }   
 </script> 
- 
 <body>
     <div id="container">
     	<ul id="ul_1">
@@ -44,10 +41,10 @@ body {margin: 0px;}
     	</ul>
     </div>
 </body>
-
 <script type="text/javascript">         
-       $("#phone").click(function(){
-       		console.log($(this).val());
+       $("#phone").click(function(){   
+       		console.log($(this).val());    //方法三：获取被点击的元素，转jquery对象
+       		console.log(this.tagName);     //方法四：获取被点击的元素
        });
 </script> 
  
