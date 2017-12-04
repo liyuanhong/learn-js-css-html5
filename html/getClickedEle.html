@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>获取被点击的元素</title>
+</head>
+
+<style type="text/css">
+body {margin: 0px;}
+#container {width: 700px;height: 300px;padding:5px;background-color: #edfdef;}
+</style>
+<script src="../lib/jquery/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">  
+       function getClickEle(ele){
+       		console.log($(ele).val());
+       		$(document).click(function(e){console.log(e.target.value)});
+       }
+
+       function getClildVal(ele){
+       		console.log($(ele).find("#girl_1")[0].tagName);
+       		console.log($($(ele).find("#girl_1")[0]).attr("id"));
+       }
+      
+</script> 
+ 
+<body>
+    <div id="container">
+    	<ul id="ul_1">
+    		<li id="ul1_li1">
+    			<label>姓名:</label><input type="text" style="width:100px;" value="Mr li">
+    		</li>
+    		<li id="ul1_li1">
+    			<label>电话:</label><input type="checkbox" style="width:100px;" value="1111111111" onclick="getClickEle(this)">
+    			<label>手机:</label><input type="checkbox" style="width:100px;" value="2222222222" id="phone">
+    			<label>email:</label><input type="checkbox" style="width:100px;" value="333@333">
+    			<label>QQ:</label><input type="checkbox" style="width:100px;" value="5555555">
+    		</li>
+    		<li>
+    			<div style="width:200px;height:200px;background-color:gray;" onclick="getClildVal(this)">
+    				<p>下面有个可爱的女孩：</p>
+    				<label><img style="height:150px;" src="../pic/e2a508ea22d6f7fd138b4458ecce0350.jpg" id="girl_1"></label>
+    			</div>
+    		</li>
+    	</ul>
+    </div>
+</body>
+
+<script type="text/javascript">         
+       $("#phone").click(function(){
+       		console.log($(this).val());
+       });
+</script> 
+ 
+</html>
