@@ -16,7 +16,7 @@ body {margin: 0px;}
        		//$(document).click(function(e){console.log(e.target.value)});
        }
        function getClildVal(ele){
-       		console.log($(ele).find("#girl_1")[0].tagName);  //方法五：获取被点击的元素的子元素转jquery对象，家伙去子元素
+       		console.log($(ele).find("#girl_1")[0].tagName);  //方法五：获取被点击的元素的子元素转jquery对象，再去获取子元素
        		console.log($($(ele).find("#girl_1")[0]).attr("id"));  //方法六：获取被点击的元素的子元素
        }   
 </script> 
