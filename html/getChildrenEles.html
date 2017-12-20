@@ -7,20 +7,58 @@
 <style type="text/css">
 body {margin: 0px;}
 #container {width: 700px;height: 500px;padding:5px;background-color: #edfdef;}
+th {border:1px;border-style:solid;}
+td {border:1px;border-style:solid;}
 </style>
 <script src="../lib/jquery/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">  
-     
+     function button1(){
+      //jquery 的find方法查找该元素下的所有元素
+        alert($($("table").find("#girl1")[0]).text());
+     }
+     function button2(){
+        alert($("table").find(".girl")[1].tagName);
+     }
+
+     //jquery 的 children方法获取的是该元素的下下一级元素  （注意table在浏览器表示后，在下方有个tbody标签）
+     function button3(){
+        alert($("tbody").children("#tr4").attr("id"));
+     }
 </script> 
 <body>
     <div id="container">
-      <div style="width:300px;height:300px;background-color:#f3b9dd;">
-       
+      <div style="width:500px;height:400px;background-color:#f3b9dd;margin:20px;">
+        <table style="border:1px;border-style:solid;width:500px;" id="table">
+          <tr style="border:1px;border-style:solid;width:500px;">
+            <th>第1列</th><th>第2列</th><th>第3列</th>
+          </tr>
+          <tr>
+            <td><button onclick="button1()">button1</button></td>
+            <td><button onclick="button2()">button2</button></td>
+            <td><button onclick="button3()">button3</button></td>
+          </tr>
+          <tr>
+            <td><a href="#" id="girl1"><img src="../pic/e2a508ea22d6f7fd138b4458ecce0350.jpg" style="height:150px;">girl1</a></td>
+            <td><a href="#"><img src="../pic/c65db6d94caf437205206eb7812e034e.jpg" style="height:150px;" class="girl">girl2</a></td>
+            <td><a href="#"><img src="../pic/7394a965a078adc29fce06d03df278c0.jpg" style="height:150px;" class="girl">girl3</a></td>
+          </tr>
+          <tr id="tr4">
+            <td><div style="width:120px;height:100px;background-color:#8ac376;">
+              <button>button4</button>
+            </div></td>
+            <td><div style="width:120px;height:100px;background-color:#8ac376;">
+              <button>button5</button>
+            </div></td>
+            <td><div style="width:120px;height:100px;background-color:#8ac376;">
+              <button>button7</button>
+            </div></td>
+          </tr>
+        </table>  
 
       </div>
     </div>
 </body>
-<script type="text/javascript">
+<script type="text/javascript"> 
  
 </script> 
  
