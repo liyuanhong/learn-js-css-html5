@@ -32,7 +32,7 @@ function showWarning(){
 </script>
  
 <body>
-	<h3>js bootstrap弹窗</h3>
+	<h3>bootstrap弹窗</h3>
     <div style="width:500px;height:500px;">
 		<button type="button" class="btn btn-xs btn-primary" onclick="showWarning()">警告弹窗</button>
 		<h4>下面有个弹窗</h4>
@@ -41,7 +41,38 @@ function showWarning(){
 		  <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
 		</div>
 		<h4>上面有个弹窗</h4>
+		
+		<h3>bootstrap下拉菜单</h3>
+		<div class="dropdown">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Dropdown
+			<span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="#">Separated link</a></li>
+		  </ul>
+		</div>
+		<h3>bootstrap下拉菜单靠右</h3>
+		<div class="dropdown pull-right">
+		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Dropdown
+			<span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+			<li><a href="#">Action</a></li>
+			<li><a href="#">Another action</a></li>
+			<li><a href="#">Something else here</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="#">Separated link</a></li>
+		  </ul>
+		</div>
 	</div>
+	
+	
 	
 	
 </body>
