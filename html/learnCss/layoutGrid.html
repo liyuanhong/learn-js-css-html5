@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>grid布局案例</title>
+</head>
+
+<body>
+    <div id="container">
+        <h3>案例一</h3>
+        <div class="container_1" style="width:500px;height: 100px;background-color: yellow;display: grid;">
+            <button>aaaaaaaaaaa</button>
+            <button>b</button>
+            <button>cccccccccccccccc</button>
+            <button>ddd</button>
+        </div>
+        <h3>案例二</h3>
+        <div class="container_2" style="width:500px;height: 100px;background-color: yellow;display: grid;">
+            <button style="word-wrap: break-word;">aaaaaaaaaaa</button>
+            <button>b</button>
+            <button>cccccccccccccccc</button>
+            <button>ddd</button>
+        </div>
+        <h3>案例三</h3>
+        <div class="container_3" style="width:500px;height: 50px;background-color: yellow;display: grid;">
+            <button style="word-wrap: break-word;">aaaaaaaaaaa</button>
+            <button>b</button>
+            <button>cccccccccccccccc</button>
+            <button>ddd</button>
+            <button style="grid-column-start:3;">鹅鹅鹅鹅鹅鹅</button>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">         
+      
+</script> 
+
+<style type="text/css">
+body {
+    margin: 0px;
+}
+#container {
+    width: 700px;
+    height: 800px;
+    padding:5px;
+    background-color: #edfdef;
+}
+
+.container_1 {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.container_2 {
+    grid-template-columns: 50px 1fr 1fr 2fr;
+}
+
+.container_3 {
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+}
+</style>
+ 
+</html>
