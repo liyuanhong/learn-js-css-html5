@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html模板</title>
+<script src="../../lib/jquery/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h3>使用css动画实现侧边栏的收取与展开</h3>
+        <div style="margin-bottom: 10px;">
+            <button onclick="leftOpen()">展开</button>
+            <button style="margin-left: 10px;" onclick="leftClose()">收起</button>
+        </div>
+        <div id="left_bar" style="background-color: pink;float: left;width: 200px;height: 600px;">
+
+        </div>
+        <div style="background-color: yellow;float: left;width: 600px;height: 600px;">
+
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">         
+function leftClose(){
+    $("#left_bar").removeClass("open")
+    $("#left_bar").addClass("close");
+}
+
+function leftOpen(){
+    if($("#left_bar").hasClass("close")){
+        $("#left_bar").removeClass("close")
+        $("#left_bar").addClass("open");
+    }
+    
+}
+</script> 
+
+<style type="text/css">
+body {margin: 0px;}
+#container {width: 1000px;height: 800px;padding:5px;background-color: #edfdef;}
+
+.container_1 {
+    grid-template-columns: 200px 1fr;
+}
+
+@keyframes close {
+  0% {
+    width: 200px; /* 动画开始时的宽度 */
+  }
+  100% {
+    width: 60px; /* 动画结束时的宽度 */
+  }
+}
+
+@keyframes open {
+  0% {
+    width: 60px; /* 动画开始时的宽度 */
+  }
+  100% {
+    width: 200px; /* 动画结束时的宽度 */
+  }
+}
+
+.close {
+  width: 200px; /* 元素初始宽度 */
+  animation-name: close; /* 指定动画名称 */
+  animation-duration: 0.2s; /* 动画持续时间 */
+  animation-timing-function: linear; /* 动画速度曲线 */
+  animation-iteration-count: 1; /* 动画播放次数，1表示播放一次 */
+  animation-fill-mode: forwards; /* 动画结束后保持结束状态 */
+}
+
+.open {
+  width: 60px; /* 元素初始宽度 */
+  animation-name: open; /* 指定动画名称 */
+  animation-duration: 0.2s; /* 动画持续时间 */
+  animation-timing-function: linear; /* 动画速度曲线 */
+  animation-iteration-count: 1; /* 动画播放次数，1表示播放一次 */
+  animation-fill-mode: forwards; /* 动画结束后保持结束状态 */
+}
+</style>
+ 
+</html>
